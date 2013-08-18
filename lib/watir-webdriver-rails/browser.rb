@@ -6,7 +6,7 @@ module WatirWebdriverRails
       
       return if @browser_initialized == true
       
-      @browser = Watir::Browser.new(WatirWebdriverRails.driver)
+      @browser = Watir::Browser.new :phantomjs
       
       @browser.class_eval do
          alias_method :old_goto,:goto

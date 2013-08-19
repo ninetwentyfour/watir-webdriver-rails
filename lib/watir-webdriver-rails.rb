@@ -14,7 +14,7 @@ require 'watir-webdriver-rails/rspec'
 # start server
 RSpec.configure do |config|
   
-  config.include WatirWebdriverRails::RSpec
+  config.include WatirWebdriverRails::RSpec, :example_group=>{:file_path=>/spec[\\\/](requests|integration)/}
   
   config.after(:each) do
     if self.class.include?(WatirWebdriverRails::RSpec)

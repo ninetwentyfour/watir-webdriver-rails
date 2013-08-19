@@ -1,4 +1,5 @@
 require 'watir-webdriver'
+require 'headless'
 
 module WatirWebdriverRails
   class WatirWebdriverRailsError < StandardError; end

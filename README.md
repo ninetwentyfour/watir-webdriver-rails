@@ -40,6 +40,7 @@ require 'watir-webdriver-rails'
 WatirWebdriverRails.host = "localhost"
 WatirWebdriverRails.port = 57124
 WatirWebdriverRails.close_browser_after_finish = true
+WatirWebdriverRails.use_browser = :ff
 
 ```
 

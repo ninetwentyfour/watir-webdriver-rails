@@ -5,8 +5,11 @@ module WatirWebdriverRails
     def initialize_browser
       
       return if @browser_initialized == true
-      
-      @browser = Watir::Browser.new :phantomjs
+
+      @headless = Headless.new
+      @headless.start
+      @browser = Watir::Browser.new
+      #@browser = Watir::Browser.new(WatirWebdriverRails.use_browser ||= :ff)
       
       @browser.class_eval do
          alias_method :old_goto,:goto
@@ -27,6 +30,7 @@ module WatirWebdriverRails
     def close_browser
       @browser.close if @browser_initialized == true
       @browser_initialized = false
+      @headless.destroy
     end
      
   end

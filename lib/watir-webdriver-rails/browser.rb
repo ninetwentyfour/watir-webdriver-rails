@@ -8,8 +8,8 @@ module WatirWebdriverRails
 
       @headless = Headless.new
       @headless.start
-      @browser = Watir::Browser.new
-      #@browser = Watir::Browser.new(WatirWebdriverRails.use_browser ||= :ff)
+      # @browser = Watir::Browser.new
+      @browser = Watir::Browser.new(WatirWebdriverRails.use_browser ||= :ff)
       
       @browser.class_eval do
          alias_method :old_goto,:goto
